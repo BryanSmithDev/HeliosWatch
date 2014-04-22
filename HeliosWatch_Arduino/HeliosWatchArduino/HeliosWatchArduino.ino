@@ -1,4 +1,18 @@
 /*
+ This project, dubbed Helios (God of Day/Night Cycle or God of the 
+ Sun), is based off of Tortuga's RetroWatch to create a Bluetooth
+ enabled smart watch using an Arduino that will pair with your Android
+ device. Once paired, the smart watch can not only display the time 
+ and date, but notifications from your Android device as well. 
+ Additionally, the the watch can also display RSS feeds and system
+ information, all of which can be filtered from the Android app designed
+ for the watch. Modifications from Tortuga's RetroWatch include, 
+ a larger screen, larger battery, vibration (haptic feedback),
+ and internal battery charging while maintaining serial connection.
+
+ Below is the RetroWatch Info
+*/
+/*
     RetroWatch Arduino is a part of open source smart watch project.
     Copyright (C) 2014  Suh Young Bae
 
@@ -26,6 +40,7 @@ Written by Suh Young Bae (godstale@hotmail.com)
 All text above, and the first splash screen(Adafruit) must be included in any redistribution
 */
 
+#include <SPI.h>
 #include <avr/pgmspace.h>
 #include <Wire.h>
 #include <SoftwareSerial.h>
