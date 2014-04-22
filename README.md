@@ -10,32 +10,31 @@ This project, dubbed Helios (God of Day/Night Cycle or God of the Sun), is based
 
 
 
-Below is the original RetroWatch readme
-==========================================================
-
-retrowatch
-==========
-
-Retro watch is open source smart watch project using Arduino and Android.
-
-
-
-==========
-[How-To: RetroWatch 제작방법 - 상세버전 (한글)](http://www.hardcopyworld.com/ngine/aduino/index.php/archives/376)
-
-[RetroWatch 안드로이드 앱 사용방법](http://www.hardcopyworld.com/ngine/android/index.php/archives/192)
-
-
-[How-To: Make your own smart watch (ENG)](http://www.hardcopyworld.com/ngine/aduino/index.php/archives/670) - translated by Chang-Han Jeon.
-
-
-==========
-Do you want to post feedback, bugreport, suggestion or question? Use below links:
-
-[Forum: ](http://www.hardcopyworld.com/ngine/index.php/board/free-board)
-
-[QnA: ](http://www.hardcopyworld.com/ngine/index.php/board/qna)
-
-Email : godstale@hotmail.com
+##Below is the original RetroWatch readme
+>
+>retrowatch
+>==========
+>
+>Retro watch is open source smart watch project using Arduino and Android.
+>
+>
+>
+>==========
+>[How-To: RetroWatch 제작방법 - 상세버전 (한글)](http://www.hardcopyworld.com/ngine/aduino/index.php/archives/376)
+>
+>[RetroWatch 안드로이드 앱 사용방법](http://www.hardcopyworld.com/ngine/android/index.php/archives/192)
+>
+>
+>[How-To: Make your own smart watch (ENG)](http://www.hardcopyworld.com/ngine/aduino/index.php/archives/670) - >translated by Chang-Han Jeon.
+>
+>
+>==========
+>Do you want to post feedback, bugreport, suggestion or question? Use below links:
+>
+>[Forum: ](http://www.hardcopyworld.com/ngine/index.php/board/free-board)
+>
+>[QnA: ](http://www.hardcopyworld.com/ngine/index.php/board/qna)
+>
+>Email : godstale@hotmail.com
 
 
