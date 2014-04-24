@@ -1,4 +1,4 @@
-Helios Watch
+![Helios](https://raw.githubusercontent.com/BryanSmithDev/HeliosWatch/Helios/HeliosWatch_Documentation/Images/HeliosLogo_Small.png "Helios")Helios Watch
 ==========
 This project, dubbed Helios (God of Day/Night Cycle or God of the Sun), is based off of Tortuga's RetroWatch to create a Bluetooth enabled smartwatch using an Arduino that will pair with your Android device. Once paired, the smart watch can not only display the time and date, but notifications from your Android device as well. Additionally, the the watch can also display RSS feeds and system information, all of which can be filtered from the Android app designed for the watch. Modifications from Tortuga's RetroWatch include, a larger screen, larger battery, vibration (haptic feedback), buzzer for alarms or per-hour beeps, and internal battery charging while maintaining serial connection.
 
@@ -9,7 +9,7 @@ This project, dubbed Helios (God of Day/Night Cycle or God of the Sun), is based
 [AI and Robotics - Spring 2014](http://www.mcs.uvawise.edu/wiki/index.php/CSC4150_-_AI_and_Robotics)
 
 
-
+==========
 ##Below is the original RetroWatch readme
 >
 >retrowatch
