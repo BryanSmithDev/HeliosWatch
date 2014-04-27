@@ -170,11 +170,17 @@ unsigned long mode_change_timer = 0;
 int buttonPin = 5;
 boolean isClicked = false;
 
+//----- Vibration Motor Control
+int motorPin = 10;
+int notificationVibrateInterval = 500;
+
 
 
 void setup()   {
   //Serial.begin(9600);    // Do not enable serial. This makes serious problem because of shortage of RAM.
   pinMode(buttonPin, INPUT);  // Defines button pin
+  
+  pinMode(motorPin, OUTPUT);
   
   init_emg_array();
   init_msg_array();
@@ -197,7 +203,12 @@ void loop() {
   unsigned long current_time = 0;
   
   // Get button input
-  if(digitalRead(buttonPin) == LOW) isClicked = LOW;
+  if(digitalRead(buttonPin) == LOW){ 
+    isClicked = LOW;
+    digitalWrite(motorPin,HIGH);
+  } else {
+    digitalWrite(motorPin,LOW); 
+  }
   
   // Receive data from remote and parse
   isReceived = receiveBluetoothData();
@@ -240,6 +251,15 @@ void init_emg_array() {
   emgParsingLine = 0;
   emgParsingChar = 0;    // First 2 byte is management byte
   emgCurDisp = 0;
+}
+
+void vibrate() {
+  digitalWrite(motorPin,HIGH);
+  delay(notificationVibrateInterval);
+  digitalWrite(motorPin,LOW);
+  delay(100);
+  digitalWrite(motorPin,HIGH);
+  delay(notificationVibrateInterval);
 }
 
 ///////////////////////////////////
@@ -456,6 +476,7 @@ void processTransaction() {
     if(msgParsingLine >= MSG_COUNT_MAX)
       msgParsingLine = 0;
     setNextDisplayTime(millis(), 0);  // update screen immediately
+    vibrate();
   }
   else if(TR_COMMAND == CMD_TYPE_ADD_EMERGENCY_OBJ) {
     emgBuffer[emgParsingLine][0] = 0x01;
@@ -465,6 +486,7 @@ void processTransaction() {
       emgParsingLine = 0;
     startEmergencyMode();
     setNextDisplayTime(millis(), 2000);
+    vibrate();
   }
   else if(TR_COMMAND == CMD_TYPE_ADD_USER_MESSAGE) {
   }
