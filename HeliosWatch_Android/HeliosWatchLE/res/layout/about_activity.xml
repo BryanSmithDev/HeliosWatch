@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView" ></ScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/app_name"
+            android:id="@+id/heliosTextView"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:textSize="32dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDy="5"
+            android:shadowRadius="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/helios_version"
+            android:id="@+id/heliosVersionTextView"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic"
+            android:textSize="18dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDy="3"
+            android:shadowRadius="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/helios_dev_name"
+            android:id="@+id/heliosDevTextView"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="24dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDy="3"
+            android:shadowRadius="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/github"
+            android:id="@+id/helios_github_button"
+            android:layout_gravity="center_horizontal"
+            android:drawableLeft="@drawable/ic_github_mark"
+            android:drawablePadding="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/basedOn"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDy="3"
+            android:shadowRadius="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Old_app_name"
+            android:id="@+id/retroTextView"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:textSize="32dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDy="5"
+            android:shadowRadius="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/retro_version"
+            android:id="@+id/retroVersionTextView"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic"
+            android:textSize="18dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDy="3"
+            android:shadowRadius="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/retro_dev_name"
+            android:id="@+id/retroDevTextView"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="24dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:shadowDy="3"
+            android:shadowRadius="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/github"
+            android:id="@+id/retro_github_button"
+            android:layout_gravity="center_horizontal"
+            android:drawableLeft="@drawable/ic_github_mark"
+            android:drawablePadding="2dp"/>
+
+        <Button
+            android:layout_width="277dp"
+            android:layout_height="wrap_content"
+            android:text="@string/license"
+            android:id="@+id/licenseButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:background="@android:color/transparent"
+            android:textStyle="italic"
+            android:textColor="@color/blue6" />
+    </LinearLayout>
+</ScrollView>

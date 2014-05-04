@@ -178,7 +178,7 @@ public class HeliosWatchActivity extends FragmentActivity implements ActionBar.T
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.retro_watch, menu);
+		getMenuInflater().inflate(R.menu.helios_watch, menu);
 		return true;
 	}
 	
@@ -205,6 +205,10 @@ public class HeliosWatchActivity extends FragmentActivity implements ActionBar.T
 			// Send all available contents to watch
 			mService.reserveRemoteUpdate(100);
 			return true;
+        case R.id.action_about:
+            // Show about.
+            startActivity(new Intent(this, HeliosWatchAboutActivity.class));
+            return true;
 		/* Disabled:
 		case R.id.action_discoverable:
 			// Disabled: Ensure this device is discoverable by others

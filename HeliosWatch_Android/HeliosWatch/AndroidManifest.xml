@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.uvawise.helioswatch"
-    android:versionCode="6"
-    android:versionName="1.0.5" >
+    android:versionCode="1"
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="18"
@@ -48,7 +48,13 @@
             android:launchMode="singleTask"
             android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        
+        <activity
+            android:name=".HeliosWatchAboutActivity"
+            android:label="@string/about"
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+
         <!-- Service -->
         <service
             android:name= "edu.uvawise.helioswatch.service.HeliosWatchService"

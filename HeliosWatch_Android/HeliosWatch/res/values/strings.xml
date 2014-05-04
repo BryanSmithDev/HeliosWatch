@@ -6,6 +6,7 @@
     <string name="service_name">Helios Watch Service</string>
     <string name="web_view_name">RSS Browser</string>
     <string name="noti_receiver_name">Helios Watch</string>
+    <string name="about">About</string>
     
     <!-- Settings -->
     <string name="action_settings">Settings</string>
@@ -232,5 +233,13 @@
     </string-array>
     
     <string name="batt_type_string">Battery: </string>
+    <string name="helios_dev_name">By: Bryan Smith</string>
+    <string name="Old_app_name">Retro Watch</string>
+    <string name="retro_dev_name">By: Suh Young Bae</string>
+    <string name="retro_version">Version 1.0.5</string>
+    <string name="github">GitHub</string>
+    <string name="helios_version">Version: 1.0</string>
+    <string name="basedOn">Based On:</string>
+    <string name="license">Apache License Version 2.0</string>
 
 </resources>
