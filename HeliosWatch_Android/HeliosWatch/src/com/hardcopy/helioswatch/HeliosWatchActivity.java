@@ -373,6 +373,13 @@ public class HeliosWatchActivity extends FragmentActivity implements ActionBar.T
 				mService.setGmailAddress(arg2);
 			}
 			break;
+
+        case IFragmentListener.CALLBACK_REQUEST_VIBRATE_MOTOR:
+            int vibrate = arg0;
+            if(mService != null) {
+                mService.setVibrate(vibrate);
+            }
+            break;
 			
 		default:
 			break;

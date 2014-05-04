@@ -221,7 +221,7 @@ public class HeliosWebViewActivity extends Activity implements OnClickListener {
 	private ServiceConnection mServiceConn = new ServiceConnection() 
 	{
 		public void onServiceConnected(ComponentName className, IBinder binder) {
-			mService = ((HeliosWatchService.RetroWatchServiceBinder) binder).getService();
+			mService = ((HeliosWatchService.HeliosWatchServiceBinder) binder).getService();
 		}
 
 		public void onServiceDisconnected(ComponentName className) {

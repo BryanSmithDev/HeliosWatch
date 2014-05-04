@@ -375,6 +375,22 @@ public class HeliosWatchService extends Service implements IContentManagerListen
 			transaction.sendTransaction();
 		}
 	}
+
+    private void sendVibrateSettingToDevice(int vibrate) {
+        if(mTransactionBuilder == null && mBtManager != null && mActivityHandler != null) {
+            mTransactionBuilder = new TransactionBuilder(mBtManager, mActivityHandler);
+        }
+
+        if(mTransactionBuilder != null) {
+            TransactionBuilder.Transaction transaction = mTransactionBuilder.makeTransaction();
+            transaction.begin();
+            transaction.setCommand(TransactionBuilder.Transaction.COMMAND_TYPE_SET_VIBRATE);
+            transaction.setMessage(vibrate, null);
+
+            transaction.settingFinished();
+            transaction.sendTransaction();
+        }
+    }
 	
 	
 	/*****************************************************
@@ -518,7 +534,11 @@ public class HeliosWatchService extends Service implements IContentManagerListen
 	public void showIndicator(int code) {
 		sendIndicatorSettingToDevice(code);
 	}
-	
+
+    public void setVibrate(int vibrate) {
+        sendVibrateSettingToDevice(vibrate);
+    }
+
 	public ArrayList<ContentObject> refreshContentObjectList() {
 		return mContentManager.refreshContentObjectList();
 	}

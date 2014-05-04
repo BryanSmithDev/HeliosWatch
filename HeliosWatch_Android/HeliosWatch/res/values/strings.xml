@@ -35,7 +35,7 @@
     <string name="bt_cmd_sending_error">Transaction failed</string>
 
     <!--  DeviceListActivity -->
-    <string name="scanning">Scanning for devices...</string>
+    <string name="scanning">Scanning for devices…</string>
     <string name="select_device">Select a device to connect</string>
     <string name="none_paired">No devices have been paired</string>
     <string name="none_found">No devices found</string>
@@ -46,8 +46,8 @@
     <!-- Options Menu -->
     <string name="connect">Connect a device</string>
     <string name="noti_settings">Notification setting</string>
-    <string name="refresh_contents">Refresh contents</string>
-    <string name="send_contents">Send data to watch</string>
+    <string name="refresh_contents">Refresh App Contents</string>
+    <string name="send_contents">Force Watch Sync</string>
     <string name="discoverable">Make discoverable</string>
     
     <!-- Command -->
@@ -66,24 +66,27 @@
     <!-- RSS strings -->
     <string name="rss_title">Type RSS title</string>
     <string name="rss_url">Type URL here.</string>
-    <string name="rss_type_here">Type RSS info below</string>
+    <string name="rss_type_here">Type RSS info below:</string>
     <string name="rss_find_more">RSS Browser</string>
     
     <!-- Settings string -->
     <string name="email_field_title">Type your Gmail address</string>
     <string name="email_addr_hint">aaa@gmail.com</string>
-    <string name="clock_style_title">Watch clock style</string>
+    <string name="clock_style_title">Watch Clock Face:</string>
     <string-array name="clock_style_array">
-        <item>Select style</item>
         <item>Simple ANALOG</item>
         <item>Simple DIGITAL</item>
         <item>Simple MIX</item>
     </string-array>
-    <string name="clock_indicator_title">Show indicator?</string>
+    <string name="clock_indicator_title">Show notification indicator?</string>
     <string-array name="clock_indicator_array">
-        <item>Select option</item>
-        <item>Visible</item>
-        <item>Invisible</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string name="vibration_motor_title">Enable Vibration?</string>
+    <string-array name="vibration_motor_array">
+        <item>Yes</item>
+        <item>No</item>
     </string-array>
     <string name="update_time_title">Set contents update interval</string>
     <string name="noti_set_gmail_addr">Set your Gmail address at WATCH CONTROL tab.</string>
@@ -100,8 +103,8 @@
     <string name="filter_text_blank">[blank]</string>
     
     <string-array name="filter_type_array">
-        <item>Object type</item>
-        <item>All type</item>
+        <item>OBJECT TYPE</item>
+        <item>All types</item>
         <item>Notification</item>
         <item>Messaging</item>
         <item>Feed</item>
@@ -110,17 +113,17 @@
     </string-array>
     
     <string-array name="filter_matching_type_array">
-        <item>Compare method</item>
+        <item>COMPARE METHOD</item>
         <item>Equals</item>
-        <item>Start with</item>
-        <item>End with</item>
+        <item>Starts With</item>
+        <item>Ends With</item>
         <item>Contains</item>
     </string-array>
     
     <string-array name="filter_replace_type_array">
-        <item>Replace method</item>
-        <item>Replace all</item>
-        <item>Replace same part only</item>
+        <item>REPLACE METHOD</item>
+        <item>Replace All</item>
+        <item>Replace Same Part Only</item>
     </string-array>
     
     <string-array name="filter_icon_type_array">
@@ -199,11 +202,11 @@
     <string name="button_go">Go</string>
     
     <!-- Dialog -->
-    <string name="enable_message">Enable selected message only</string>
-    <string name="enable_package">Enable this app\'s message all</string>
+    <string name="enable_message">Enable only the selected message.</string>
+    <string name="enable_package">Enable all of this app\'s messages.</string>
     <string name="close">Close</string>
-    <string name="text_enabled">Selected message is enabled already. If you want to disable this message, move to Filter tab and delete filter.</string>
-    
+    <string name="text_enabled">Selected message is already enabled. If you want to disable this message, move to Filter tab and delete the filter.</string>
+
     <!-- Etc -->
     <string-array name="message_type_array">
         <item>UNDEFINED</item>

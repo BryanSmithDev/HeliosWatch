@@ -43,6 +43,7 @@ public class WatchControlFragment extends Fragment {
 	private EditText mEditGmailAddr = null;
 	private Spinner mSpinnerClockStyle = null;
 	private Spinner mSpinnerIndicator = null;
+    private Spinner mSpinnerMotor = null;
 	
 	private int mPresetClockStyle = -1;
 	private int mPresetIndicator = -1;
@@ -85,7 +86,7 @@ public class WatchControlFragment extends Fragment {
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				if(mPresetClockStyle > -1 && mPresetClockStyle != position) {
 					mFragmentListener.OnFragmentCallback(IFragmentListener.CALLBACK_REQUEST_CLOCK_STYLE, 
-							position, 0, null, null, null);
+							position+1, 0, null, null, null);
 				}
 				mPresetClockStyle = position;
 			}
@@ -94,24 +95,44 @@ public class WatchControlFragment extends Fragment {
 		});
 		
 		mSpinnerIndicator = (Spinner) rootView.findViewById(R.id.spinner_show_indicator);
-		ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(mContext, 
-				R.array.clock_indicator_array, 
-				R.layout.spinner_simple_item2);
-		adapter.setDropDownViewResource(R.layout.spinner_dropdown_simple_item);
-		mSpinnerIndicator.setPrompt(mContext.getString(R.string.clock_indicator_title));
-		mSpinnerIndicator.setAdapter(adapter2);
-		mSpinnerIndicator.setOnItemSelectedListener(new OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				if(mPresetIndicator > -1 && mPresetIndicator != position) {
-					mFragmentListener.OnFragmentCallback(IFragmentListener.CALLBACK_REQUEST_SHOW_INDICATOR, 
-							position, 0, null, null, null);
-				}
-				mPresetIndicator = position;
-			}
-			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {}
-		});
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(mContext,
+                R.array.clock_indicator_array,
+                R.layout.spinner_simple_item2);
+        adapter2.setDropDownViewResource(R.layout.spinner_dropdown_simple_item);
+        mSpinnerIndicator.setPrompt(mContext.getString(R.string.clock_indicator_title));
+        mSpinnerIndicator.setAdapter(adapter2);
+        mSpinnerIndicator.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(mPresetIndicator > -1 && mPresetIndicator != position) {
+                    mFragmentListener.OnFragmentCallback(IFragmentListener.CALLBACK_REQUEST_SHOW_INDICATOR,
+                            position+1, 0, null, null, null);
+                }
+                mPresetIndicator = position;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {}
+        });
+
+        mSpinnerMotor = (Spinner) rootView.findViewById(R.id.spinner_vibration_motor);
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(mContext,
+                R.array.vibration_motor_array,
+                R.layout.spinner_simple_item2);
+        adapter3.setDropDownViewResource(R.layout.spinner_dropdown_simple_item);
+        mSpinnerMotor.setPrompt(mContext.getString(R.string.vibration_motor_title));
+        mSpinnerMotor.setAdapter(adapter3);
+        mSpinnerMotor.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(mPresetIndicator > -1 && mPresetIndicator != position) {
+                    mFragmentListener.OnFragmentCallback(IFragmentListener.CALLBACK_REQUEST_VIBRATE_MOTOR,
+                            position+1, 0, null, null, null);
+                }
+                mPresetIndicator = position;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {}
+        });
 		
 		return rootView;
 	}

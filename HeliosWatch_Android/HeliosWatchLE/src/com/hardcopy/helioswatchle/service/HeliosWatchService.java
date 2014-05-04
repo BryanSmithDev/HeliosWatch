@@ -67,7 +67,7 @@ public class HeliosWatchService extends Service implements IContentManagerListen
 	private Context mContext = null;
 	private static Handler mActivityHandler = null;
 	private ServiceHandler mServiceHandler = new ServiceHandler();
-	private final IBinder mBinder = new RetroWatchServiceBinder();
+	private final IBinder mBinder = new HeliosWatchServiceBinder();
 	
 	// Notification broadcast receiver
 	private NotificationReceiver mReceiver;
@@ -382,6 +382,22 @@ public class HeliosWatchService extends Service implements IContentManagerListen
 			transaction.sendTransaction();
 		}
 	}
+
+    private void sendVibrateSettingToDevice(int vibrate) {
+        if(mTransactionBuilder == null && mBtManager != null && mActivityHandler != null) {
+            mTransactionBuilder = new TransactionBuilder(mBtManager, mActivityHandler);
+        }
+
+        if(mTransactionBuilder != null) {
+            TransactionBuilder.Transaction transaction = mTransactionBuilder.makeTransaction();
+            transaction.begin();
+            transaction.setCommand(TransactionBuilder.Transaction.COMMAND_TYPE_SET_VIBRATE);
+            transaction.setMessage(vibrate, null);
+
+            transaction.settingFinished();
+            transaction.sendTransaction();
+        }
+    }
 	
 	
 	/*****************************************************
@@ -453,7 +469,7 @@ public class HeliosWatchService extends Service implements IContentManagerListen
 
         // Initialize the BluetoothManager to perform bluetooth connections
         if(mBtManager == null)
-        	mBtManager = new BluetoothManager(this, mServiceHandler);
+            mBtManager = new BluetoothManager(this, mServiceHandler);
     }
 	
     /**
@@ -525,7 +541,11 @@ public class HeliosWatchService extends Service implements IContentManagerListen
 	public void showIndicator(int code) {
 		sendIndicatorSettingToDevice(code);
 	}
-	
+
+    public void setVibrate(int vibrate) {
+        sendVibrateSettingToDevice(vibrate);
+    }
+
 	public ArrayList<ContentObject> refreshContentObjectList() {
 		return mContentManager.refreshContentObjectList();
 	}
@@ -627,7 +647,7 @@ public class HeliosWatchService extends Service implements IContentManagerListen
 	 *	Handler, Listener, Timer, Sub classes
 	 *
 	 ******************************************************/
-	public class RetroWatchServiceBinder extends Binder {
+	public class HeliosWatchServiceBinder extends Binder {
 		public HeliosWatchService getService() {
 			return HeliosWatchService.this;
 		}

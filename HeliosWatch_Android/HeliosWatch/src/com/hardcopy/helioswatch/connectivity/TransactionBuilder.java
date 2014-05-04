@@ -60,6 +60,7 @@ public class TransactionBuilder {
 		public static final int COMMAND_TYPE_REQUEST_MOVEMENT_HISTORY = 0x32;
 		public static final int COMMAND_TYPE_SET_CLOCK_STYLE = 0x33;
 		public static final int COMMAND_TYPE_SHOW_INDICATOR = 0x34;
+        public static final int COMMAND_TYPE_SET_VIBRATE = 0x35;
 		
 		public static final int COMMAND_TYPE_PING = 0x51;
 		public static final int COMMAND_TYPE_AWAKE = 0x52;
@@ -163,6 +164,7 @@ public class TransactionBuilder {
 				
 			case COMMAND_TYPE_SET_CLOCK_STYLE:
 			case COMMAND_TYPE_SHOW_INDICATOR:
+            case COMMAND_TYPE_SET_VIBRATE:
 				mCommandType = cmd;
 				break;
 			default:
@@ -250,6 +252,12 @@ public class TransactionBuilder {
 				}
 				
 				byte[] strBuffer = mMsg.getBytes();
+				if(strBuffer != null && strBuffer.length > 0) {
+					for(int i=0; i<strBuffer.length; i++) {
+						if(strBuffer[i] == (byte)0x00)
+							strBuffer[i] = (byte)0xFD;
+					}
+				}
 				
 				// Make buffer
 				// [Transaction start signal : 1byte : 0xfd] 
@@ -258,15 +266,15 @@ public class TransactionBuilder {
 				// [icon type : 1byte] 
 				// [data packet : various size : Currently max 16 byte] 
 				// [Transaction end signal : 1byte : 0xfe]
-				mBuffer = new byte[6+strBuffer.length];
+				int stringSize = (strBuffer.length > MAX_MESSAGE_LENGTH) ? MAX_MESSAGE_LENGTH : strBuffer.length;
+				mBuffer = new byte[6+stringSize];
 				
 				mBuffer[0] = TRANSACTION_START_BYTE;	// Transaction start signal
 				mBuffer[1] = (byte)mCommandType;		// Command
 				mBuffer[2] = (byte)0xF0;			// This is reserved for Arduino management
 				mBuffer[3] = (byte)mId;				// Message ID
 				mBuffer[4] = (byte)mIconType;		// mIconType : Icon type
-				System.arraycopy(strBuffer, 0, mBuffer, 5, 
-						(strBuffer.length > MAX_MESSAGE_LENGTH) ? MAX_MESSAGE_LENGTH : strBuffer.length);
+				System.arraycopy(strBuffer, 0, mBuffer, 5, stringSize);
 				mBuffer[mBuffer.length - 1] = TRANSACTION_END_BYTE;
 				
 				break;
@@ -298,6 +306,7 @@ public class TransactionBuilder {
 			case COMMAND_TYPE_DELETE_USER_MESSAGE:
 			case COMMAND_TYPE_SET_CLOCK_STYLE:
 			case COMMAND_TYPE_SHOW_INDICATOR:
+            case COMMAND_TYPE_SET_VIBRATE:
 				// Make buffer
 				// [Transaction start signal : 1byte : 0xfd] 
 				// [command type : 1byte]

@@ -377,6 +377,13 @@ public class HeliosWatchActivity extends FragmentActivity implements ActionBar.T
 				mService.setGmailAddress(arg2);
 			}
 			break;
+
+        case IFragmentListener.CALLBACK_REQUEST_VIBRATE_MOTOR:
+            int vibrate = arg0;
+            if(mService != null) {
+                mService.setVibrate(vibrate);
+            }
+            break;
 			
 		default:
 			break;
@@ -399,7 +406,7 @@ public class HeliosWatchActivity extends FragmentActivity implements ActionBar.T
 		public void onServiceConnected(ComponentName className, IBinder binder) {
 			Logs.d(TAG, "Activity - Service connected");
 			
-			mService = ((HeliosWatchService.RetroWatchServiceBinder) binder).getService();
+			mService = ((HeliosWatchService.HeliosWatchServiceBinder) binder).getService();
 			
 			// Activity couldn't work with mService until connections are made
 			// So initialize parameters and settings here, not while running onCreate()

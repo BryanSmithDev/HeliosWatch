@@ -60,6 +60,7 @@ public class TransactionBuilder {
 		public static final int COMMAND_TYPE_REQUEST_MOVEMENT_HISTORY = 0x32;
 		public static final int COMMAND_TYPE_SET_CLOCK_STYLE = 0x33;
 		public static final int COMMAND_TYPE_SHOW_INDICATOR = 0x34;
+        public static final int COMMAND_TYPE_SET_VIBRATE = 0x35;
 		
 		public static final int COMMAND_TYPE_PING = 0x51;
 		public static final int COMMAND_TYPE_AWAKE = 0x52;
@@ -163,6 +164,7 @@ public class TransactionBuilder {
 				
 			case COMMAND_TYPE_SET_CLOCK_STYLE:
 			case COMMAND_TYPE_SHOW_INDICATOR:
+            case COMMAND_TYPE_SET_VIBRATE:
 				mCommandType = cmd;
 				break;
 			default:
@@ -304,6 +306,7 @@ public class TransactionBuilder {
 			case COMMAND_TYPE_DELETE_USER_MESSAGE:
 			case COMMAND_TYPE_SET_CLOCK_STYLE:
 			case COMMAND_TYPE_SHOW_INDICATOR:
+            case COMMAND_TYPE_SET_VIBRATE:
 				// Make buffer
 				// [Transaction start signal : 1byte : 0xfd] 
 				// [command type : 1byte]
