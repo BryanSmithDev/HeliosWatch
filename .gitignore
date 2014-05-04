@@ -30,6 +30,7 @@ $RECYCLE.BIN/
 # Generated files
 bin/
 gen/
+out/
 
 # Gradle files
 .gradle/

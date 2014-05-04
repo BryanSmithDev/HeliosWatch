@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hardcopy.helioswatchle"
+    package="edu.uvawise.helioswatchle"
     android:versionCode="6"
     android:versionName="1.0.5" >
 
@@ -37,7 +37,7 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.hardcopy.helioswatchle.DeviceListActivity"
+        <activity android:name="edu.uvawise.helioswatchle.DeviceListActivity"
                   android:label="@string/select_device"
                   android:theme="@android:style/Theme.Dialog"
                   android:configChanges="keyboardHidden|orientation|screenSize" >
